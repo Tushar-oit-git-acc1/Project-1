@@ -1,0 +1,76 @@
+/* Product Page Layout */
+.product-page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Individual Product Card Styling */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Image Styling */
+.product-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Title Styling */
+.product-card h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Add to Cart Button Styling */
+.product-card button {
+    margin-top: auto;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.product-card button:hover {
+    background-color: #0056b3;
+}
+
+/* Brilliant Hover Effect */
+.product-card button.active {
+    animation: brilliant-hover 0.5s ease-in-out;
+}
+
+@keyframes brilliant-hover {
+    0% {
+        background-color: #007bff;
+    }
+    50% {
+        background-color: #00ff00;
+        transform: scale(1.1);
+    }
+    100% {
+        background-color: #007bff;
+        transform: scale(1);
+    }
+}
