@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/gallery.css';
 
+
 // Import images from src/assets/
 import lalmahal from '../assets/lalmahal.jpg';
 import vishrambaug from '../assets/vishrambaug.jpg';
