@@ -1,6 +1,6 @@
+// Import React and CSS styles
 import React from 'react';
 import '../styles/gallery.css';
-
 
 // Import images from src/assets/
 import lalmahal from '../assets/lalmahal.jpg';
@@ -16,7 +16,7 @@ import iskcon from '../assets/iskcon.jpg';
 import phinix from '../assets/phinix.jpg';
 import balaji from '../assets/balaji.jpg';
 
-// Array of image imports (from src/assets/)
+// Array of local images with import paths
 const localImages = [
     { src: lalmahal, alt: 'Lal Mahal' },
     { src: vishrambaug, alt: 'Vishrambaug Wada' },
@@ -32,7 +32,7 @@ const localImages = [
     { src: balaji, alt: 'Balaji' },
 ];
 
-// Array of image paths for images in public/assets/
+// Array of public images from public/assets/
 const publicImages = [
     '/assets/lalmahal.jpg',
     '/assets/vishrambaug.jpg',
@@ -50,7 +50,7 @@ const publicImages = [
     '/assets/umesh.jpg',
 ];
 
-// Limit the number of images rendered (for example, to 12 images)
+// Limit the number of images rendered (e.g., to 12 images)
 const MAX_IMAGES = 12;
 
 const Gallery = () => {
@@ -60,15 +60,26 @@ const Gallery = () => {
             <div className="gallery-images">
                 {/* Render images imported from src/assets/ */}
                 {localImages.slice(0, MAX_IMAGES).map((image, index) => (
-                    <img key={`local-${index}`} src={image.src} alt={image.alt} />
+                    <img
+                        key={`local-${index}`}
+                        src={image.src}
+                        alt={image.alt}
+                        className="gallery-image"
+                    />
                 ))}
 
                 {/* Render images from public/assets/ */}
-                {publicImages.slice(0, MAX_IMAGES - localImages.length).map((image, index) => (
-                    <img key={`public-${index}`} src={image} alt={`Gallery Image ${index + 1}`} />
-                ))}
+                {publicImages
+                    .slice(0, MAX_IMAGES - localImages.length)
+                    .map((image, index) => (
+                        <img
+                            key={`public-${index}`}
+                            src={image}
+                            alt={`Gallery Image ${index + 1}`}
+                            className="gallery-image"
+                        />
+                    ))}
             </div>
-            
         </section>
     );
 };
